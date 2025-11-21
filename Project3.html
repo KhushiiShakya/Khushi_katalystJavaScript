@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+        body{text-align:center;font-family:sans-serif;margin-top:80px;background:beige}
+        h1{font-size:50px; color:brown}
+        button{padding:10px 20px; margin:5px; font-size:16px; color:black}
+    </style>
+</head>
+<body>
+    <h1 id="count">0</h1>
+    <button onclick="startCounter()">Start</button>
+    <button onclick="resetCounter()">Reset</button>
+    <button onclick="stopCounter()">Stop</button>
+    <script>
+        let count = 0;
+        let timer = null;
+        function startCounter() {
+            if(timer==null){
+                timer=setInterval(() => {
+                    count++;
+                    document.getElementById("count").innerText= count;
+                }, 1000);
+            }
+        }
+        function stopCounter(){
+            clearInterval(timer);
+            timer = null;
+        }
+        function resetCounter(){
+            stopCounter();
+            count=0;
+            document.getElementById("count").innerText=count;
+        }
+</script>
+</body>
+</html>

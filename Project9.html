@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Cookie</title>
+    <style>
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            font-family:Arial, Helvetica, sans-serif;
+            background:beige;
+        }
+        button{
+            background:rgba(251, 165, 4, 0.923);
+            color:white;
+            font-size:20px;
+            padding:12px 25px;
+            border:none;
+            border-radius:25px;
+            position:absolute;
+            transition:0.2s;cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" onmouseover="move()">🍪Catch Me</button>
+    <script>
+        function move(){
+            btn.style.left=Math.random()*80+"vw";
+            btn.style.top=Math.random()*80+"vh";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack Mole</title>
+    <style>
+        body{
+            text-align:center;
+            font-family:'Times New Roman', Times, serif;
+            margin-top:20px;
+            background:rgb(242, 241, 220);
+        }
+        .hole{
+            width:80px;
+            height:80px;
+            background:rgb(63, 6, 6);
+            border-radius:50%;
+            display:inline-block;
+            margin:10px;
+            position:relative;
+        }
+        .mole{
+            width:60px;
+            height:60px;
+            background:brown;
+            border-radius:50%;
+            position:absolute;
+            top:10px;
+            left:10px;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Score: <span id="score">0</span></h2>
+    <div class="hole"><div class="mole"></div></div>
+    <div class="hole"><div class="mole"></div></div>
+    <div class="hole"><div class="mole"></div></div>
+
+    <script>
+        let holes=document.querySelectorAll(".mole");
+        setInterval(()=>{
+            holes.forEach(m=>m.style.display="none");
+            let random=holes[Math.floor(Math.random()*3)];
+            random.style.display="block";
+            random.style.display;
+            random.onclick=()=>{
+                score.innerText=Number(score.innerText)+1;
+                random.style.display="none";
+            }
+        },700);
+    </script>
+</body>
+</html>

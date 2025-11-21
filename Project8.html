@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Pop</title>
+    <style>
+        body{margin:0;height:100vh;overflow:hidden;background:cyan ; cursor:pointer;}
+        .balloon{
+            position:absolute;width:60px;height:80px;background:pink; border-radius:50%; animation:float 5s linear forwards
+        }
+        @keyframes float{100%{transform:translateY(-110vh);opacity:0;}}
+    </style>
+</head>
+<body onclick="spawn(event)">
+    <script>
+        function spawn(e){
+            let b = document.createElement("div");
+            b.className = "balloon";
+            b.style.left =(Math.random()*90)+"vw";
+            b.style.top = '100vh';
+            b.style.background = `hsl(${Math.random()*360},80%,60%)`;
+            b.onclick=()=>{b.remove();};
+            document.body.appendChild(b);
+            setTimeout(()=>b.remove(),5000);   
+        }
+
+        setInterval(()=>spawn(),700);
+    </script>
+    
+</body>
+</html>

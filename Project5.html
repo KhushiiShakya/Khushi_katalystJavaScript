@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Rating</title>
+    <style>
+        body{text-align:center; font-family:Arial, Helvetica, sans-serif; margin-top:60px;}
+        span{font-size:45px; cursor:pointer;padding:10px;}
+        .active{transform:scale(1,2);}
+    </style>
+</head>
+<body>
+    <h2>Rate Your Experience</h2>
+    <p id="msg"></p>
+    <div id="emojiBox">
+        <span onclick="rate(this)">😡</span>
+        <span onclick="rate(this)">🙁</span>
+        <span onclick="rate(this)">😐</span>
+        <span onclick="rate(this)">🙂</span>
+        <span onclick="rate(this)">🤩</span>
+    </div>
+    <script>
+        function rate(el){
+            let emojis = document.querySelectorAll("span");
+            emojis.forEach(e => e.classList.remove("active"));
+            el.classList.add("active");
+            document.getElementById("msg").innerText=`You rated: ${element.innerText}`;
+        }
+    </script>
+</body>
+</html> 
